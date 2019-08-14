@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true mk7077/reactfrontend_travis npm run test
 
 deploy:
-  provider: elastickbeanstalk
+  provider: elasticbeanstalk
   region: "us-east-1" 
   app: "learn-docker-react"
   env: "LearnDockerReact-env"
