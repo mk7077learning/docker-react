@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t mk7077/reactfrontend_travis react -f dockerfile.dev .
+  - docker build -t mk7077/reactfrontend_travis -f dockerfile.dev .
 
 script:
   - docker run -e CI=true mk7077/reactfrontend_travis npm run test
