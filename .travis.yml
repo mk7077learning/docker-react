@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true mk7077/reactfrontend_travis npm run test
+
+deploy:
+  provider: elastickbeanstalk
+  region: "us-east-1" 
+  app: "learn-docker-react"
+  env: "LearnDockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-758436446823"
+  bucket_path: "learn-docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
